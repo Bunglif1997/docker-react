@@ -1,0 +1,23 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+
+RUN npm install 
+
+COPY . . 
+
+CMD ["npm","run","start"]
+
+# เราใช้ Base Image node:alpine
+
+# เรา set working directory เป็น /app
+
+# เรา copy file package.json เข้าไปที่ working directory
+
+# เราสั่งให้ run คำสั่ง npm install
+
+# เราสั่งให้ copy file ทั้งหมดใน app ของเราเข้าไปที่ working directory
+
+# เราสั่งให้ run คำสั่ง npm run start
