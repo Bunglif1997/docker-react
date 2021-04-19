@@ -1,8 +1,8 @@
-sudo: false
-services:
-  - docker 
+sudo: required 
+services: 
+  - docker
 
-before_install:
+before_install: 
   - docker build -t kubooz/docker-react -f Dockerfile.dev .
-script:
-  - docker run kubooz/docker-react npm run test -- --coverage
+script: 
+  - docker run -e CI=true kubooz/docker-react npm run test -- --coverage
